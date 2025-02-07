@@ -26,5 +26,6 @@
 2. Pillow
 3. Bootstrap
 4. SQLite
+5. SQLAlchemy
 # Демонстрация работы проекта
 *Ссылка*
