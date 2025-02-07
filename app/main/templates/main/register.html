@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+
+{% block title %}Регистрация{% endblock title %}
+
+{% block style %}
+<style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+</style>
+{% endblock style %}
+
+{% block content %}
+    <div class="form-container">
+        <h2>Регистрация</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+            <a href="{% url 'auth' %}" class="btn btn-primary">Уже есть аккаунт</a>
+            <a href="{% url 'home' %}" class="btn btn-info">На главную</a>
+        </form>
+    </div>
+{% endblock content %}

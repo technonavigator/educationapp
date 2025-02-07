@@ -1,0 +1,41 @@
+{% extends "main/base.html" %}
+
+{% block title %}Вход{% endblock title %}
+
+{% block style %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock style %}
+{% block content %}
+    {% if form.errors %}
+        <p>Неверно введен логин или пароль.</p>
+    {% endif %}
+    <div class="form-container">
+        <h2>Вход</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Войти</button>
+            <p>Нет аккаунта? <a href="{% url 'register' %}" class="btn btn-link">Зарегистрироваться</a></p>
+            <a href="{% url 'home' %}" class="btn btn-info">На главную</a>
+            <p>Или войдите через:</p>
+            <a href="{% url 'home' %}" class="btn btn-danger">Google</a>
+            <a href="{% url 'home' %}" class="btn btn-warning">Яндекс</a>
+        </form>
+    </div>
+{% endblock content %}
