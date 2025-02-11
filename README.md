@@ -28,4 +28,4 @@
 4. SQLite
 5. SQLAlchemy
 # Демонстрация работы проекта
-*Ссылка*
+https://rutube.ru/video/private/ef14ef443ff300f7b31dc7f98a7996b2/?p=PherresjEOKjdZT5SBOuhw
